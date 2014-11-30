@@ -37,6 +37,8 @@ docker run -p 6667:6667 -e "FLAG=ThisIsASampleFlag" -it xss
 
 ## Architecture
 
+![https://raw.githubusercontent.com/eduard44/xss-challenge/master/doc/Arch.png](https://raw.githubusercontent.com/eduard44/xss-challenge/master/doc/Arch.png)
+
 Inside the Docker container there are two main modules, a simple IRC server and the
 vulnerable IRC client. The client by itself is not really a web browser, but when
 it starts it creates an instance of a PhantomJS headless browser, this allows it
