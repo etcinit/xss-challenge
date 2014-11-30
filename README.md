@@ -30,6 +30,16 @@ if it was it sends a private message back to the user with the flag.
 In order to prevent any concurrency issues the client uses an internal queue to
 process each message sequentially.
 
+## Quick setup
+
+```sh
+# Start the server
+docker run -p 6667:6667 -it eduard44/xss-challenge
+```
+
+After the server has started, you should be able to connect with your own IRC client to `localhost:6667`
+(or the Boot2Docker VM IP address)
+
 ## Building from source
 
 ```sh
