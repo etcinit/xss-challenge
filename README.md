@@ -16,13 +16,13 @@ daemon:
 ## Building from source
 
 ```sh
-// Change the current work dir to the git repo
+# Change the current work dir to the git repo
 cd xss-challenge
 
-// Build the docker image (this might take a while)
+# Build the docker image (this might take a while)
 docker build -t .
 
-// Start the server
+# Start the server
 docker run -p 6667:6667 -it xss
 ```
 
@@ -54,13 +54,13 @@ have Node.js and NPM installed and have an IRC server to which the client can co
 The setup process is very simple:
 
 ```sh
-// Change the current work dir to the git repo
+# Change the current work dir to the git repo
 cd xss-challenge
 
-// Install dependencies
+# Install dependencies
 npm install
 
-// Start the client
+# Start the client
 node index
 ```
 
