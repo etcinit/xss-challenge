@@ -76,8 +76,8 @@ You can use the environment variables below to configure the client without modi
 
 ## Example CTF formulation
 
-For an example CTF problem formulation and hints, check CTF.md
+For an example CTF problem formulation and hints, check [CTF.md](https://github.com/eduard44/xss-challenge/blob/master/CTF.md)
 
 ## Example solution
 
-Check SOLUTION.md (Spoiler alert!)
+Check [SOLUTION.md](https://github.com/eduard44/xss-challenge/blob/master/SOLUTION.md) (Spoiler alert!)
