@@ -1,8 +1,11 @@
 # XSS IRC Challenge
 
-This is a very simple XSS challenge that emulates an insecure HTML IRC client
+This is a very simple CTF XSS challenge that emulates an insecure HTML/JS IRC client
 connected to an IRC network. The goal is to inject JS into the client and
-change the title of the web page.
+change the title of the web page (`document.title`) to a non-empty string.
+
+As an additional non-productive feature, the client will send random [developer excuses](http://developerexcuses.com/)
+ to the `#general` channel on the IRC server every 10 seconds.
 
 ## Requirements
 
@@ -12,28 +15,6 @@ daemon:
 
 - Docker 1.3 (or higher)
 - Boot2docker (if you are on Windows or OSX)
-
-## Building from source
-
-```sh
-# Change the current work dir to the git repo
-cd xss-challenge
-
-# Build the docker image (this might take a while)
-docker build -t .
-
-# Start the server
-docker run -p 6667:6667 -it xss
-```
-
-## Using a custom flag
-
-If the `FLAG` environment variable is set, the client
-will use that instead of the default flag. You can set it when running the container:
-
-```
-docker run -p 6667:6667 -e "FLAG=ThisIsASampleFlag" -it xss
-```
 
 ## Architecture
 
@@ -48,6 +29,31 @@ After that it checks if the page title changes after the message was injected,
 if it was it sends a private message back to the user with the flag.
 In order to prevent any concurrency issues the client uses an internal queue to
 process each message sequentially.
+
+## Building from source
+
+```sh
+# Change the current work dir to the git repo
+cd xss-challenge
+
+# Build the docker image (this might take a while)
+docker build -t .
+
+# Start the server
+docker run -p 6667:6667 -it xss
+```
+
+After the server has started, you should be able to connect with your own IRC client to `localhost:6667`
+(or the Boot2Docker VM IP address)
+
+## Using a custom flag
+
+If the `FLAG` environment variable is set, the client
+will use that instead of the default flag. You can set it when running the container:
+
+```
+docker run -p 6667:6667 -e "FLAG=ThisIsASampleFlag" -it xss
+```
 
 ## Running without Docker
 

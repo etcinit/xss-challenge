@@ -14,7 +14,7 @@ WORKDIR /opt/xss/
 
 ADD . /opt/xss/
 
-RUN rm -r node_modules && npm install
+RUN rm -rf node_modules && npm install
 
 EXPOSE 6667
 

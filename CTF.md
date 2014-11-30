@@ -2,12 +2,18 @@
 
 This is an XSS challenge over IRC, because why not?
 
+```
+host: somehost.com
+port: 6667
+channel: #general
+```
+
 There is a user connected to this network that is
 using an insecure client to chat with people.
 
 The client is HTML/JS based
 
-The goal: Change the title of the page of the client (document.title)
+The goal: Change the title of the page of the client (`document.title`)
 
 ## Hint 1:
 
